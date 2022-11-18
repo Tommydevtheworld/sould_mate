@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "588446062654",
+    "project_id": "notification-social-955e1",
+    "storage_bucket": "notification-social-955e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588446062654:android:cbc8519bcd0ce7faaf196f",
+        "android_client_info": {
+          "package_name": "com.example.flutter_social_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588446062654-gjko92co8dpir7bblja2g518q0m7vec2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC45-XY1EPa9eyq_CNkkg_gc4Ii8hCMgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588446062654-gjko92co8dpir7bblja2g518q0m7vec2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "588446062654-1eqjc9ogoh7k3acc61a4r2dv85cqahbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSocialApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588446062654:android:1d48a80028f9064aaf196f",
+        "android_client_info": {
+          "package_name": "vn.thomson.sould_mate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588446062654-gjko92co8dpir7bblja2g518q0m7vec2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC45-XY1EPa9eyq_CNkkg_gc4Ii8hCMgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588446062654-gjko92co8dpir7bblja2g518q0m7vec2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "588446062654-1eqjc9ogoh7k3acc61a4r2dv85cqahbs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterSocialApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
