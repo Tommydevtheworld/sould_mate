@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sould_mate/common/widgets/ButtonForm.dart';
 import 'package:sould_mate/common/widgets/InputForm.dart';
 
@@ -8,6 +9,15 @@ class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.close, color: Colors.white),
+          onPressed: () => context.go('/sign-in'),
+        ),
+      ),
       body: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -23,7 +33,7 @@ class ForgotPassword extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 105,
+              height: 150,
             ),
             Text(
               'Forgot password',

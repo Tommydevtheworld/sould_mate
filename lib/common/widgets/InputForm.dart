@@ -10,6 +10,7 @@ class InputForm extends StatelessWidget {
       height: 44,
       child: TextField(
         autofocus: true,
+        style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
           hintText: hintText,
           contentPadding: const EdgeInsets.only(left: 20),

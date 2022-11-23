@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sould_mate/common/widgets/ButtonForm.dart';
 import 'package:sould_mate/common/widgets/InputForm.dart';
 
@@ -9,6 +10,15 @@ class CreateAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => context.go('/'),
+        ),
+      ),
       body: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -23,6 +33,9 @@ class CreateAccount extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(
+              height: 150,
+            ),
             Text(
               'Create an account',
               style: Theme.of(context).textTheme.headlineMedium,
