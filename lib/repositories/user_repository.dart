@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:user_repository/src/models/models.dart';
+import 'package:sould_mate/models/user.dart';
 import 'package:uuid/uuid.dart';
 
 class UserRepository {

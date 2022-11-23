@@ -1,9 +1,9 @@
-import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sould_mate/modules/authentication/bloc/authentication_bloc.dart';
+import 'package:sould_mate/repositories/authentication_repository.dart';
+import 'package:sould_mate/repositories/user_repository.dart';
 import 'package:sould_mate/themes/theme.dart';
-import 'package:user_repository/user_repository.dart';
 import 'package:sould_mate/route/router.dart';
 
 class App extends StatelessWidget {

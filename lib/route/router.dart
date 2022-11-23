@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:sould_mate/create_account/view/create_account.dart';
 import 'package:sould_mate/forgot_password/view/forgot_password.dart';
+import 'package:sould_mate/home/view/auth_page.dart';
 import 'package:sould_mate/home/view/home_page.dart';
 import 'package:sould_mate/login/view/login_page.dart';
 
@@ -22,6 +23,10 @@ final router = GoRouter(
     GoRoute(
       path: '/create-account',
       builder: (context, state) => const CreateAccount(),
+    ),
+    GoRoute(
+      path: '/auth',
+      builder: (context, state) => const AuthPage(),
     ),
   ],
   debugLogDiagnostics: true,
