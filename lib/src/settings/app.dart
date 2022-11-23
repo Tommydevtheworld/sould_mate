@@ -1,11 +1,10 @@
 import 'package:authentication_repository/authentication_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sould_mate/home/view/home_page.dart';
-import 'package:sould_mate/login/view/login_page.dart';
 import 'package:sould_mate/modules/authentication/bloc/authentication_bloc.dart';
-import 'package:sould_mate/splash/view/splash_page.dart';
+import 'package:sould_mate/themes/theme.dart';
 import 'package:user_repository/user_repository.dart';
+import 'package:sould_mate/route/router.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -40,38 +39,11 @@ class AppView extends StatefulWidget {
 }
 
 class _AppViewState extends State<AppView> {
-  final _navigatorKey = GlobalKey<NavigatorState>();
-
-  NavigatorState get _navigator => _navigatorKey.currentState!;
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: _navigatorKey,
-      builder: (context, child) {
-        return BlocListener<AuthenticationBloc, AuthenticationState>(
-          listener: (context, state) {
-            switch (state.status) {
-              case AuthenticationStatus.authenticated:
-                _navigator.pushAndRemoveUntil<void>(
-                  HomePage.route(),
-                  (route) => false,
-                );
-                break;
-              case AuthenticationStatus.unauthenticated:
-                _navigator.pushAndRemoveUntil<void>(
-                  LoginPage.route(),
-                  (route) => false,
-                );
-                break;
-              case AuthenticationStatus.unknown:
-                break;
-            }
-          },
-          child: child,
-        );
-      },
-      onGenerateRoute: (_) => SplashPage.route(),
+    return MaterialApp.router(
+      routerConfig: router,
+      theme: theme,
     );
   }
 }

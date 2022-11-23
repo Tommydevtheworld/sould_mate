@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:sould_mate/common/widgets/ButtonForm.dart';
+import 'package:sould_mate/common/widgets/InputForm.dart';
 
-import 'login_form.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,30 +26,23 @@ class LoginPage extends StatelessWidget {
               height: 105,
             ),
             Text(
-              'Welcome back',
+              'Forgot password',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             Text(
-              'Login to your account',
+              'Please enter your email address. You will receive a link to create a new password via email.',
               style: Theme.of(context).textTheme.displayMedium,
             ),
             const SizedBox(
-              height: 54,
+              height: 41,
             ),
-            const LoginForm(),
+            const InputForm(hintText: 'Your Email'),
             const SizedBox(
               height: 40,
             ),
-            Container(
-              width: double.infinity,
-              alignment: Alignment.center,
-              child: GestureDetector(
-                onTap: () => context.go('/forgot-password'),
-                child: Text(
-                  'Forgot your password?',
-                  style: Theme.of(context).textTheme.displayMedium,
-                ),
-              ),
+            ButtonForm(
+              text: 'SEND',
+              action: () => {},
             ),
           ],
         ),

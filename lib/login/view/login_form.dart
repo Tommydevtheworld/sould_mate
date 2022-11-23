@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
+import 'package:sould_mate/common/widgets/ButtonForm.dart';
+import 'package:sould_mate/common/widgets/InputForm.dart';
 import 'package:sould_mate/login/bloc/login_bloc.dart';
 
 class LoginForm extends StatelessWidget {
@@ -8,29 +10,21 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginBloc, LoginState>(
-      listener: (context, state) {
-        if (state.status.isSubmissionFailure) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              const SnackBar(content: Text('Authentication Failure')),
-            );
-        }
-      },
-      child: Align(
-        alignment: const Alignment(0, -1 / 3),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _UsernameInput(),
-            const Padding(padding: EdgeInsets.all(12)),
-            _PasswordInput(),
-            const Padding(padding: EdgeInsets.all(12)),
-            _LoginButton(),
-          ],
+    return Column(
+      children: [
+        const InputForm(hintText: 'Email'),
+        const SizedBox(
+          height: 10,
         ),
-      ),
+        const InputForm(hintText: 'Password'),
+        const SizedBox(
+          height: 40,
+        ),
+        ButtonForm(
+          text: 'LOGIN',
+          action: () => {},
+        )
+      ],
     );
   }
 }
@@ -38,19 +32,24 @@ class LoginForm extends StatelessWidget {
 class _UsernameInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginBloc, LoginState>(
-      buildWhen: (previous, current) => previous.username != current.username,
-      builder: (context, state) {
-        return TextField(
-          key: const Key('loginForm_usernameInput_textField'),
-          onChanged: (username) =>
-              context.read<LoginBloc>().add(LoginUsernameChanged(username)),
-          decoration: InputDecoration(
-            labelText: 'username',
-            errorText: state.username.invalid ? 'invalid username' : null,
+    return SizedBox(
+      height: 44,
+      child: TextField(
+        autofocus: true,
+        decoration: InputDecoration(
+          hintText: 'Email',
+          contentPadding: const EdgeInsets.only(left: 20),
+          hintStyle: Theme.of(context).textTheme.displayMedium,
+          filled: true,
+          fillColor: Colors.white12,
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.all(
+              Radius.circular(30.0),
+            ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }
