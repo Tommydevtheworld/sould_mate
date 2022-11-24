@@ -4,7 +4,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sould_mate/authentication/bloc/authentication_bloc.dart';
 import 'package:sould_mate/common/widgets/ButtonForm.dart';
+import 'package:sould_mate/home/view/auth_page.dart';
 import 'package:sould_mate/repositories/authentication_repository.dart';
+import 'package:sould_mate/repositories/user_repository.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,20 +17,25 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthenticationBloc, AuthenticationState>(
-      listener: (context, state) {
-        switch (state.status) {
-          case AuthenticationStatus.authenticated:
-            context.go('/dashboard');
-            break;
-          case AuthenticationStatus.unauthenticated:
-            context.go('/create-account');
-            break;
-          default:
-            context.go('/');
-        }
-      },
-      child: Scaffold(
+    return BlocConsumer<AuthenticationBloc, AuthenticationState>(
+        listener: (context, state) {
+      switch (state.status) {
+        case AuthenticationStatus.authenticated:
+          context.go('/dashboard');
+          break;
+        case AuthenticationStatus.unauthenticated:
+          context.go('/create-account');
+          break;
+        default:
+          context.go('/');
+      }
+    }, builder: (context, state) {
+      var user = RepositoryProvider.of<UserRepository>(context).getUser();
+      if (state.status == AuthenticationStatus.authenticated) {
+        return const Dashboard();
+      }
+
+      return Scaffold(
         body: Container(
           width: double.infinity,
           decoration: const BoxDecoration(
@@ -126,7 +133,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
