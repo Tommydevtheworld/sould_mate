@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sould_mate/modules/authentication/bloc/authentication_bloc.dart';
+import 'package:sould_mate/authentication/bloc/authentication_bloc.dart';
 import 'package:sould_mate/repositories/authentication_repository.dart';
 import 'package:sould_mate/repositories/user_repository.dart';
 import 'package:sould_mate/themes/theme.dart';
@@ -31,14 +31,9 @@ class App extends StatelessWidget {
   }
 }
 
-class AppView extends StatefulWidget {
+class AppView extends StatelessWidget {
   const AppView({super.key});
 
-  @override
-  State<AppView> createState() => _AppViewState();
-}
-
-class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

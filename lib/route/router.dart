@@ -7,27 +7,25 @@ import 'package:sould_mate/login/view/login_page.dart';
 
 // GoRouter configuration
 final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const HomePage(),
-    ),
-    GoRoute(
-      path: '/sign-in',
-      builder: (context, state) => const LoginPage(),
-    ),
-    GoRoute(
-      path: '/forgot-password',
-      builder: (context, state) => const ForgotPassword(),
-    ),
-    GoRoute(
-      path: '/create-account',
-      builder: (context, state) => const CreateAccount(),
-    ),
-    GoRoute(
-      path: '/auth',
-      builder: (context, state) => const AuthPage(),
-    ),
+  routes: <RouteBase>[
+    GoRoute(path: '/', builder: (context, state) => const HomePage(), routes: [
+      GoRoute(
+        path: 'sign-in',
+        builder: (context, state) => const LoginPage(),
+      ),
+      GoRoute(
+        path: 'forgot-password',
+        builder: (context, state) => const ForgotPassword(),
+      ),
+      GoRoute(
+        path: 'create-account',
+        builder: (context, state) => const CreateAccount(),
+      ),
+      GoRoute(
+        path: 'dashboard',
+        builder: (context, state) => const Dashboard(),
+      ),
+    ]),
   ],
   debugLogDiagnostics: true,
   initialLocation: '/',
