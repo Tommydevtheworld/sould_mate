@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sould_mate/login/bloc/login_bloc.dart';
+import 'package:sould_mate/repositories/authentication_repository.dart';
 
 import 'login_form.dart';
 
@@ -46,7 +49,13 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 54,
             ),
-            const LoginForm(),
+            BlocProvider(
+              create: (context) => LoginBloc(
+                authenticationRepository:
+                    RepositoryProvider.of<AuthenticationRepository>(context),
+              ),
+              child: const LoginForm(),
+            ),
             const SizedBox(
               height: 40,
             ),

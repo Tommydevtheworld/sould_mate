@@ -41,13 +41,10 @@ dependencies:
   flutter_bloc: ^8.1.1
   google_sign_in: ^5.4.2
   uuid: ^3.0.0
-  authentication_repository:
-    path: packages/authentication_repository
+  email_validator: '^2.1.16'
   bloc: ^8.1.0
   equatable: ^2.0.3
   formz: ^0.4.0
-  user_repository:
-    path: packages/user_repository
   font_awesome_flutter: ^10.2.1
   flutter_datetime_picker: ^1.5.1
 

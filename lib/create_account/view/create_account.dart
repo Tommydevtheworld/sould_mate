@@ -43,15 +43,24 @@ class CreateAccount extends StatelessWidget {
             const SizedBox(
               height: 70,
             ),
-            const InputForm(hintText: 'Username'),
+            InputForm(
+              hintText: 'Username',
+              handleOnChange: (value) {},
+            ),
             const SizedBox(
               height: 10,
             ),
-            const InputForm(hintText: 'Email'),
+            InputForm(
+              hintText: 'Email',
+              handleOnChange: (value) {},
+            ),
             const SizedBox(
               height: 10,
             ),
-            const InputForm(hintText: 'Phone'),
+            InputForm(
+              hintText: 'Phone',
+              handleOnChange: (value) {},
+            ),
             const SizedBox(
               height: 10,
             ),
@@ -89,7 +98,10 @@ class CreateAccount extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const InputForm(hintText: 'Password'),
+            InputForm(
+              hintText: 'Password',
+              handleOnChange: (value) {},
+            ),
             // TextButton(
             //   onPressed: () {
             //     DatePicker.showDatePicker(context,
