@@ -53,7 +53,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     if (state.status.isValidated) {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       try {
-        print('IN SUBMIT');
         await _authenticationRepository.logIn(
           username: state.email.value,
           password: state.password.value,

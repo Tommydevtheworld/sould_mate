@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
       }
     }, builder: (context, state) {
       var user = RepositoryProvider.of<UserRepository>(context).getUser();
+      print(user);
       if (state.status == AuthenticationStatus.authenticated) {
         return const Dashboard();
       }
