@@ -5,9 +5,9 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Text('dashboard'),
+    return const Scaffold(
+      body: Center(
+        child: Text('dashboard'),
       ),
     );
   }
